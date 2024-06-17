@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles.css">
+    <title>Notícias IBGE</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Notícias IBGE</h1>
+
+        <form action="" id="busca">
+            <input type="text" id="pesquisa" placeholder="Pesquisar">
+            <button type="submit" id="btn-pesquisa">🔍</button>
+        </form>
+
+        <div id="filter-container">
+            <svg id="iconeFiltro" width="20" height="20" fill="#f0f0f0" viewBox="0 0 80 90" focusable="false"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="m 0,0 30,45 0,30 10,15 0,-45 30,-45 Z"></path>
+            </svg>
+        </div>
+        <span id="filter-count">0</span>
+    </header>
+
+    <main>
+
+        <dialog id="dialog">
+            <form id="form" method="dialog">
+                <div id="fechar">
+                    <button title="Fechar">✕</button>
+                </div>
+
+                <div id="tip-qtd">
+                    <div id="d-tipo">
+                        <label for="tipo">Tipo:</label> <!--disabled selected hidden-->
+                        <select name="tipo" id="tipo">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="noticias">Noticías</option>
+                            <option value="releases">Releases</option>
+                        </select>
+                    </div>
+                    <div id="de">
+                        <label for="de">De:</label>
+                        <input type="date" name="data-de" id="data-de">
+                    </div>
+
+
+                </div>
+
+                <div id="de-ate">
+                    <div id="d-qtd">
+                        <label for="quantidade">Quantidade:</label>
+                        <select name="quantidade" id="quantidade">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+
+                    <div id="ate">
+                        <label for="ate">Até:</label>
+                        <input type="date" name="data-ate" id="data-ate">
+                    </div>
+                </div>
+
+                <div id="aplicar">
+                    <button type="submit" title="Aplicar">Aplicar</button>
+                </div>
+
+            </form>
+        </dialog>
+
+        <div id="news-container"></div>
+        <ul id="pagination"></ul>
+
+    </main>
+
+    <footer>
+        <p>© 2024 Prova de programação web</p>
+    </footer>
+
+    <script src="src/script.js"></script>
+
+</body>
+
+</html>
